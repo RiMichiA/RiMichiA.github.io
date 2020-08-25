@@ -39,7 +39,13 @@ function selectOption(option) {
     showTextNode(nextTextNodeId)
 }
 
-const textNodes = fetch("./data.json")
+fetch("./data.json")
+    .then(function(resp){
+        return resp.json();
+    })
+    .then(function(data){
+        const textNodes = data
+    });
 
 
 startGame()
