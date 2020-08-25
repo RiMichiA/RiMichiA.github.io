@@ -1,7 +1,7 @@
 [
     {
         id: 1,
-        text: "Du wachst in einem Großraumbüro auf und ein Glas mit blauen Glibber setzt neben dir auf dem Tisch.",
+        text: "Du wachst in einem Keller auf und ein Glas mit blauen Glibber setzt neben dir auf dem Tisch.",
         options: [
             {
                 text: "Glas mitnhemen.",
@@ -17,7 +17,7 @@
     },
     {
         id: 2,
-        text: "Wohin möchtest du gehen?",
+        text: "Wohin mÃ¶chtest du gehen?",
         options: [
             {
                 text: "In den Webinarraum.",
@@ -36,7 +36,7 @@
 
     {
         id: 3,
-        text: " Als du am Tisch von Micha vorbeikommst spricht er dich auf den Glibber an und möchte ihn haben, er bietet dir sogar etwas dafür an.",
+        text: " Als du am Tisch von Micha vorbeikommst spricht er dich auf den Glibber an und mÃ¶chte ihn haben, er bietet dir sogar etwas dafÃ¼r an.",
         options: [
             {
                 text: "Glibber gegen Schokolade tauschen.",
