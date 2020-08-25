@@ -39,13 +39,10 @@ function selectOption(option) {
     showTextNode(nextTextNodeId)
 }
 
-fetch("./data.json")
-    .then(function(resp){
-        return resp.json();
-    })
-    .then(function(data){
-        const textNodes = data
-    });
+var xhReq = new XMLHttpRequest();
+xhReq.open("GET", "data.json", false);
+xhReq.send(null);
+var textNodes = JSON.parse(xhReq.responseText);
 
 
 startGame()
