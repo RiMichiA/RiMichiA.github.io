@@ -14,18 +14,47 @@ body{
     font-family: sans-serif;
     color: white;
 }
+.searchContainer{
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
 
-.location, 
-.temperature{
-    height: 30vh;
-    width: 50%;
-    display: flex;
+.searchContainer:hover{
+    opacity: 1;
+}
+.searchContainer input{
+height: 30px;
+}
+
+button{
+    width: 60px;
+    height: 30px;
+}
+#itemcontainer{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
     justify-content: space-around;
     align-items: center;
 }
+.location, 
+.temperature{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;    
+}
 
+.location-timezone{
+    margin-bottom: 20px;
+}
 .temperature{
     flex-direction: column;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
 }
 
 .degree-section{

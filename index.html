@@ -9,23 +9,24 @@
 </head>
 
 <body>
-    <div class="searchContainer">
+    <div class="searchContainer" id="searchContainer">
         <input type="text" class="searchControl" placeholder="City Name or Zipcode" id="seachInput">
         <button class="searchControl" id="seachBtn">Search</button>
     </div>
-    <div class="location">
-        <h1 class="location-timezone">Timezone</h1>
-        <canvas id="icon" width="128" height="128"></canvas>
+    <div id="itemcontainer">
+        <div class="location" id="location">
+            <h1 class="location-timezone" id="location-timezone">Timezone</h1>
+            <canvas id="icon" width="128" height="128"></canvas>
 
-    </div>
-    <div class="temperature">
-        <div class="degree-section">
-            <h2 class="temperature-degree">4</h2>
-            <span>C</span>
         </div>
-        <div class="temperature-description">Its friggin cold</div>
-        <script src="skycons.js"></script>
-        <script src="app.js"></script>
+        <div class="temperature">
+            <div class="degree-section" id="degree-section">
+                <h2 class="temperature-degree" id="temperature-degree">4</h2>
+                <span id="temp-symbol">C</span>
+            </div>
+            <script src="skycons.js"></script>
+            <script src="app.js"></script>
+        </div>
     </div>
 
 </body>

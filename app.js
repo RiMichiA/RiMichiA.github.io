@@ -1,30 +1,12 @@
-// window.addEventListener("load", () => {
-//     let long;
-//     let lat;
-
-
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(position => {
-//             long = position.coords.longitude;
-//             lat = position.coords.latitude;
-
-//             const proxy = 'https://cors-anywhere.herokuapp.com/';
-//             const api = `${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
-
-//             fetch(api)
-//             .then(response =>{
-//                 return response.json();
-//             })
-//             .then(data =>{
-//                 console.log(data)
-//             });
-//         });
-//     }
-// });
-
 let appId = "7011eefab70811b208a381b9f73d0c50";
 let units = "metric";
 let searchMethod;
+const tempElement = document.getElementById("temperature-degree");
+const locationElement = document.getElementById("location-timezone");
+let itemContainer = document.getElementById("itemcontainer");
+const degreeElement = document.getElementById("degree-section");
+const searchContainer = document.getElementById("searchContainer");
+let today = new Date().getHours();
 
 function getSearchMethod(searchTerm) {
     if (searchTerm.length === 5 && Number.parseInt(searchTerm) + "" === searchTerm)
@@ -33,9 +15,20 @@ function getSearchMethod(searchTerm) {
         searchMethod = "q";
 }
 
+function backgroundColor(){
+    if (today >= 21 && today <= 6) {
+        document.body.style.background = "linear-gradient(rgb(0, 0, 102), rgb(50, 49, 63))";}
+        else if(today>6 && today <= 17){
+        document.body.style.background = "linear-gradient(rgb(47,150,163), rgb(48,62,143))";}
+        else {
+        document.body.style.background = "linear-gradient(rgb(255, 204, 0), rgb(47,150,163))";
+        }
+}
+
 function searchWeather(searchTerm) {
+    backgroundColor();
     getSearchMethod(searchTerm);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`).then(result => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}&lang=de`).then(result => {
         return result.json();
     }).then(result => {
         init(result)
@@ -43,9 +36,11 @@ function searchWeather(searchTerm) {
 }
 
 function init(resultFromServer) {
-    //console.log(resultFromServer);
-    console.log(resultFromServer.weather[0].main);
+    itemContainer.style.display = "flex";
+    searchContainer.style.opacity = 0.3;
     setIcons(resultFromServer.weather[0].main);
+    tempElement.textContent = Math.round(resultFromServer.main.temp);
+    locationElement.textContent = resultFromServer.name;
 }
 
 function setIcons(weatherCondition) {
@@ -84,4 +79,5 @@ document.getElementById("seachBtn").addEventListener("click", () => {
     let searchTerm = document.getElementById("seachInput").value;
     if (searchTerm)
         searchWeather(searchTerm);
-})
+    })
+
