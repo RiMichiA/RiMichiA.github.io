@@ -33,40 +33,55 @@ button{
     height: 30px;
 }
 #itemcontainer{
-    height: 40vh;
     display: none;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
     align-items: center;
 }
+
+.days{
+    display: flex;
+    flex-direction: row;
+}
+
+.temp-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+    margin: 2vh 15px 5vh 15px;
+}
 .location, 
-.temperature{
+.day{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center; 
 }
 
 .location-timezone{
     margin-bottom: 20px;
+    font-size: 45px;
 }
-.temperature{
+
+.day{
     flex-direction: column;
-    margin-top: 2vh;
-    margin-bottom: 5vh;
+    margin: 2vh 15px 5vh 15px;
 }
 
 .degree-section{
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin-top: 50px;
 }
 .degree-section span{
     margin: 10px;
-    font-size: 30px;
+    font-size: 38px;
 }
 
 .degree-section h2{
     font-size: 40px;
+    font-weight: 700;
 }
